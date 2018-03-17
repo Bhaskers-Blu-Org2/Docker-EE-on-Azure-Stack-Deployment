@@ -1,4 +1,4 @@
-# Docker Enterprise Edition on Azure Stack
+# Docker Enterprise Edition on Azure Stack (Validated against 1802 build)
 
 This ARM Template deploys the Docker EE platform into an Azure Stack environment. 
 
