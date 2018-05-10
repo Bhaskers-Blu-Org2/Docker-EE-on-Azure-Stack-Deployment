@@ -1,12 +1,15 @@
 # Docker Enterprise Edition on Azure Stack 
 
-This ARM Template deploys the Docker EE platform into an Azure Stack environment. 
+This ARM Template deploys the Docker EE platform into an Azure Stack environment (Validated against 1802 build). 
 
 ![Docker Logo](https://www.docker.com/sites/default/files/horizontal.png)
 ![Azure Logo](https://vignette.wikia.nocookie.net/logopedia/images/f/fa/Microsoft_Azure.svg/revision/latest/scale-to-width-down/290?cb=20170928200148)
 
 ## Pre-Requisites
-* Properly installed Azure Stack environment (Validated against 1802 build)
+
+* Properly installed Azure Stack environment with following downloaded to Azure Stack Marketplace
+ ![screenshot](./images/image04.png)
+
 * Docker EE License (or [trial](https://store.docker.com/editions/enterprise/docker-ee-trial) license)
 
 ## Usage
@@ -16,6 +19,16 @@ This ARM Template deploys the Docker EE platform into an Azure Stack environment
 | --- | --- | --- |
 | `labName` | Provide a short, unique string to identify your deployment. | `docker-ee` |
 | `dockerEEURL` | This is the full URL for a subscription located at `store.docker.com`. | `https://storebits.docker.com/ee/m/sub-00000000-0000-0000-0000-000000000000` |
+
+### Default Template Values
+
+Many values are customizable via ARM Template Parameters or an adjustment to ARM Template Variables. Useful default values for this template include:
+
+| Property | Value|
+| --- | --- |
+| Admin Username | `eeadmin` |
+| Admin Password | `Docker123!` |
+| VNet Range | `10.0.0.0/16` |
 
 ### Installation via Azure Stack Portal
 
