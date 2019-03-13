@@ -48,7 +48,7 @@
     "shared": {
       "storage": {
         "name": "[concat('sa', uniqueString(resourceGroup().id))]",
-        "type": "Standard_LRS",
+        "type": "Premium_LRS",
         "vhdContainerName": "vhd"
       },
       "networking": {
