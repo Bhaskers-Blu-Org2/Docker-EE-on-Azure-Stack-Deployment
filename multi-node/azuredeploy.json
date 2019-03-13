@@ -38,10 +38,13 @@
         "ucp": "latest",
         "dtr": "latest"
       }
+    },
+    "domainPrefix" : {
+      "type": "string"
     }
   },
   "variables": {
-    "labName": "[resourceGroup().name]",
+    "labName": "[parameters('domainPrefix')]",
     "shared": {
       "storage": {
         "name": "[concat('sa', uniqueString(resourceGroup().id))]",
