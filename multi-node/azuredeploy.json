@@ -98,13 +98,13 @@
       }
     },
     "api": {
-      "availabilitySets": "2015-06-15",
-      "loadBalancers": "2015-06-15",
-      "networkInterfaces": "2015-06-15",
-      "publicIPAddresses": "2015-06-15",
-      "storageAccounts": "2015-06-15",
-      "virtualMachines": "2015-06-15",
-      "virtualNetwork": "2015-06-15"
+      "availabilitySets": "2017-03-30",
+      "loadBalancers": "2017-10-01",
+      "networkInterfaces": "2017-10-01",
+      "publicIPAddresses": "2017-10-01",
+      "storageAccounts": "2016-01-01",
+      "virtualMachines": "2017-03-30",
+      "virtualNetwork": "2017-10-01"
     }
   },
   "resources": [{
