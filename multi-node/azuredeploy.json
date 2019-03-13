@@ -145,6 +145,9 @@
       "tags": {
         "displayName": "Availability Set - Managers"
       },
+      "sku":{
+        "name": "Aligned"
+      },
       "properties": {
         "platformFaultDomainCount": 2,
         "platformUpdateDomainCount": 5
@@ -158,6 +161,9 @@
       "tags": {
         "displayName": "Availability Set - DTR"
       },
+      "sku":{
+        "name": "Aligned"
+      },
       "properties": {
         "platformFaultDomainCount": 2,
         "platformUpdateDomainCount": 5
@@ -170,6 +176,9 @@
       "location": "[resourceGroup().location]",
       "tags": {
         "displayName": "Availability Set - Workers (Linux)"
+      },
+      "sku":{
+        "name": "Aligned"
       },
       "properties": {
         "platformFaultDomainCount": 2,
@@ -714,12 +723,10 @@
         "storageProfile": {
           "imageReference": "[variables('managers').imageReference]",
           "osDisk": {
-            "name": "osdisk",
             "diskSizeGB": 128,
-            "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('shared').storage.name), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).primaryEndpoints.blob, 'vhd', '/', 'manager-01', '-osdisk.vhd')]"
+            "managedDisk":{
+              "storageAccountType" : "Premium_LRS"
             },
-            "caching": "ReadWrite",
             "createOption": "FromImage"
           }
         },
@@ -787,12 +794,10 @@
         "storageProfile": {
           "imageReference": "[variables('managers').imageReference]",
           "osDisk": {
-            "name": "osdisk",
             "diskSizeGB": 128,
-            "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('shared').storage.name), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).primaryEndpoints.blob, 'vhd', '/', concat('manager-', padLeft(copyIndex(2), 2, '0')), '-osdisk.vhd')]"
+            "managedDisk":{
+              "storageAccountType" : "Premium_LRS"
             },
-            "caching": "ReadWrite",
             "createOption": "FromImage"
           }
         },
@@ -861,12 +866,10 @@
         "storageProfile": {
           "imageReference": "[variables('dtr').imageReference]",
           "osDisk": {
-            "name": "osdisk",
             "diskSizeGB": 128,
-            "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('shared').storage.name), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).primaryEndpoints.blob, 'vhd', '/', concat('dtr-', padLeft(copyIndex(1), 2, '0')), '-osdisk.vhd')]"
+            "managedDisk":{
+              "storageAccountType" : "Premium_LRS"
             },
-            "caching": "ReadWrite",
             "createOption": "FromImage"
           }
         },
@@ -936,12 +939,10 @@
         "storageProfile": {
           "imageReference": "[variables('workers-linux').imageReference]",
           "osDisk": {
-            "name": "osdisk",
             "diskSizeGB": 128,
-            "vhd": {
-              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('shared').storage.name), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).primaryEndpoints.blob, 'vhd', '/', concat('worker-linux-', padLeft(copyIndex(1), 2, '0')), '-osdisk.vhd')]"
+            "managedDisk":{
+              "storageAccountType" : "Premium_LRS"
             },
-            "caching": "ReadWrite",
             "createOption": "FromImage"
           }
         },
