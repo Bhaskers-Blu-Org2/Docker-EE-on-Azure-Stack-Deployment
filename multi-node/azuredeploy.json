@@ -34,7 +34,7 @@
     "versions": {
       "type": "object",
       "defaultValue": {
-        "engine": "stable-17.06",
+        "engine": "stable-18.09",
         "ucp": "latest",
         "dtr": "latest"
       }
